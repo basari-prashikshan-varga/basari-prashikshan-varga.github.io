@@ -87,6 +87,20 @@ body {
 .two-col { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 28px; }
 @media (max-width: 820px) { .two-col { grid-template-columns: 1fr; } }
 
+.about-text { font-size: 18px; line-height: 1.75; }
+.about-text h2 { font-size: 28px; margin-top: 0; color: var(--brand); }
+.teacher-photo-in-about { display: flex; justify-content: center; }
+.teacher-photo-in-about img {
+    width: 80%;
+    max-width: 480px;
+    height: auto;
+    border-radius: 14px;
+    border: 1px solid var(--gold);
+}
+@media (max-width: 820px) {
+    .teacher-photo-in-about img { width: 100%; max-width: 100%; }
+}
+
 .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 @media (max-width: 900px) { .grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 620px) { .grid { grid-template-columns: 1fr; } }
