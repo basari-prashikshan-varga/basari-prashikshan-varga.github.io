@@ -61,6 +61,7 @@ body {
     color: var(--brand);
     text-decoration: none;
     background: #fffef8;
+    font-size: 16px;
 }
 .btn.primary {
     background: linear-gradient(180deg, var(--gold) 0%, #b98a1f 100%);
@@ -145,6 +146,9 @@ body {
     color: var(--text);
 }
 .contact-form input::placeholder, .contact-form textarea::placeholder { color: #93a0c9; }
+
+/* Larger send button text on forms */
+.contact-form .btn { font-size: 18px; padding: 12px 18px; }
 
 .contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus {
     border-color: var(--brand);
