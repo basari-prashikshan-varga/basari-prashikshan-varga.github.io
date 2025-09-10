@@ -78,7 +78,7 @@ body {
     margin: 0 0 12px;
     color: var(--brand);
 }
-.hero p { color: var(--muted); margin: 0 0 24px; }
+.hero p { color: var(--muted); margin: 0 0 24px; font-size: clamp(18px, 2.2vw, 24px); }
 .actions .btn { margin: 0 8px; }
 
 .section { padding: 64px 0; }
@@ -99,11 +99,11 @@ body {
 }
 .card h3 { margin-top: 0; }
 .card ul { margin: 0; padding-left: 18px; color: var(--muted); }
+.
+.teacher-photo img { width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--gold); }
 
-.gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
-@media (max-width: 1000px) { .gallery { grid-template-columns: repeat(3, 1fr); } }
-@media (max-width: 700px) { .gallery { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 460px) { .gallery { grid-template-columns: 1fr; } }
+.gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+@media (max-width: 700px) { .gallery { grid-template-columns: 1fr; } }
 .gallery img { width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--gold); }
 
 .video-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
@@ -138,11 +138,20 @@ body {
     outline: none;
 }
 
-.socials a { margin-right: 12px; color: var(--brand); text-decoration: none; font-weight: 600; }
+.socials { display: flex; flex-wrap: wrap; gap: 10px 14px; }
+.socials a { display: inline-flex; align-items: center; gap: 6px; color: var(--brand); text-decoration: none; font-weight: 600; }
 .socials a:hover { color: var(--brand-strong); }
 
 .site-footer { border-top: 2px solid var(--gold); background: #fffdf8; }
-.site-footer .container { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; }
+.site-footer .container { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; gap: 14px; }
 .site-footer .small { color: var(--brand); text-decoration: none; font-weight: 700; }
+
+/* Footer socials */
+.footer-socials { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.footer-socials a { display: inline-flex; align-items: center; gap: 6px; color: var(--brand); text-decoration: none; font-weight: 600; }
+.footer-socials a:hover { color: var(--brand-strong); }
+
+/* Feature list spacing */
+.features { display: flex; flex-direction: column; justify-content: space-between; gap: 10px; padding: 8px 0; min-height: 220px; }
 
 

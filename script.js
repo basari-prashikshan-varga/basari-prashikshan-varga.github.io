@@ -61,16 +61,11 @@ document.addEventListener('DOMContentLoaded', () => {
         };
         loadFromCDN();
 
-        // Auto-prefix phone input with the selected dial code (digits only) and restrict to digits
+        // Restrict phone input to digits only (no auto-prefix)
         const maybePrefixPhone = () => {
             if (!phoneInput) return;
-            const dial = (dialSelect.value || '+91').replace(/[^0-9]/g, '');
             const digits = phoneInput.value.replace(/[^0-9]/g, '');
-            if (digits === '' || phoneInput.value.trim().startsWith('+')) {
-                phoneInput.value = dial + (digits ? digits : '');
-            } else {
-                phoneInput.value = digits;
-            }
+            phoneInput.value = digits;
         };
         if (phoneInput) {
             phoneInput.addEventListener('input', () => {
@@ -79,9 +74,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 phoneInput.value = digits;
             });
         }
-        // On load and whenever dial code changes
-        maybePrefixPhone();
-        dialSelect.addEventListener('change', maybePrefixPhone);
+        // Enforce digits-only while typing
+        // (no default dial-code text prefilled)
     }
 
     // Basic client-side email validation on submit
@@ -94,6 +88,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 alert('Please enter a valid email address.');
                 email.focus();
             }
+        });
+    }
+
+    // Digits-only for age field as well
+    const ageInput = document.getElementById('age');
+    if (ageInput) {
+        ageInput.addEventListener('input', () => {
+            let digits = ageInput.value.replace(/[^0-9]/g, '');
+            digits = digits.replace(/^0+/, '');
+            ageInput.value = digits;
         });
     }
 });
