@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://basari-prashikshan-varga.github.io/sitemap.xml
+
+
