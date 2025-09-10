@@ -1,2 +1,2 @@
-# basari-prashikshan-varga.github.io
-Indian Classical Flute Classes
+# suhas-flute-classes.github.io
+Indian Classical Flute Classes by Suhas Vaidya
