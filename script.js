@@ -1,4 +1,42 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Mobile menu functionality
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const nav = document.querySelector('.nav');
+    
+    if (mobileMenuToggle && nav) {
+        mobileMenuToggle.addEventListener('click', () => {
+            const isActive = nav.classList.contains('active');
+            
+            if (isActive) {
+                nav.classList.remove('active');
+                mobileMenuToggle.classList.remove('active');
+                mobileMenuToggle.setAttribute('aria-expanded', 'false');
+            } else {
+                nav.classList.add('active');
+                mobileMenuToggle.classList.add('active');
+                mobileMenuToggle.setAttribute('aria-expanded', 'true');
+            }
+        });
+        
+        // Close mobile menu when clicking on nav links
+        nav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+                mobileMenuToggle.classList.remove('active');
+                mobileMenuToggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!nav.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+                nav.classList.remove('active');
+                mobileMenuToggle.classList.remove('active');
+                mobileMenuToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
+
     const buttons = document.querySelectorAll('[data-cta]');
     buttons.forEach(btn => {
         btn.addEventListener('click', () => {

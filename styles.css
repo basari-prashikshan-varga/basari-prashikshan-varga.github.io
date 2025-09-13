@@ -40,8 +40,13 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 14px 0;
+    position: relative;
 }
 .logo { text-decoration: none; color: inherit; }
+.logo img {
+    max-height: 120px;
+    width: auto;
+}
 .logo-placeholder {
     height: 84px; /* room for a large horizontal logo */
     display: flex; align-items: center; padding: 0 14px;
@@ -51,8 +56,245 @@ body {
     font-weight: 800; letter-spacing: 0.5px;
     background: linear-gradient(0deg, #fffdf8, #fffaf0);
 }
-.nav a { color: var(--brand); text-decoration: none; margin-left: 18px; font-weight: 700; }
-.nav a:hover { color: var(--brand-strong); }
+
+/* Mobile Navigation */
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.nav a { 
+    color: var(--brand); 
+    text-decoration: none; 
+    font-weight: 700; 
+    transition: color 0.2s ease;
+}
+
+.nav a:hover { 
+    color: var(--brand-strong); 
+}
+
+/* Mobile menu toggle */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.mobile-menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: var(--brand);
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Mobile navigation styles */
+@media (max-width: 768px) {
+    .site-header .container {
+        padding: 10px 0;
+    }
+    
+    .logo img {
+        max-height: 50px;
+    }
+    
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    
+    .nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--gold);
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        border-top: 2px solid var(--brand);
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    
+    .nav.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .nav a {
+        padding: 10px 0;
+        text-align: center;
+        font-size: 18px;
+        border-bottom: 1px solid rgba(122, 0, 25, 0.1);
+        width: 100%;
+    }
+    
+    .nav a:last-child {
+        border-bottom: none;
+    }
+    
+    .nav .btn {
+        margin: 10px 0 0 0;
+        padding: 12px 20px;
+        font-size: 16px;
+    }
+}
+
+/* Additional mobile improvements */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 0 10px;
+    }
+    
+    .hero {
+        padding: 60px 0 40px;
+    }
+    
+    .hero h1 {
+        font-size: 28px;
+        margin-bottom: 8px;
+    }
+    
+    .hero h2 {
+        font-size: 20px;
+        margin-bottom: 16px;
+    }
+    
+    .hero p {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+    
+    .section {
+        padding: 40px 0;
+    }
+    
+    .about-text {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+    
+    .about-text h2 {
+        font-size: 24px;
+        margin-bottom: 16px;
+    }
+    
+    .teacher-photo-in-about img {
+        width: 100%;
+        max-width: 100%;
+        margin-top: 20px;
+    }
+    
+    .card {
+        padding: 16px;
+        margin-bottom: 16px;
+    }
+    
+    .card h3 {
+        font-size: 18px;
+        margin-bottom: 12px;
+    }
+    
+    .card p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+    
+    .contact-form .row {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .contact-form input, 
+    .contact-form textarea, 
+    .contact-form select {
+        padding: 14px 16px;
+        font-size: 16px;
+    }
+    
+    .contact-form .btn {
+        font-size: 16px;
+        padding: 14px 20px;
+        width: 100%;
+    }
+    
+    .footer-socials {
+        flex-direction: column;
+        gap: 8px;
+        align-items: flex-start;
+    }
+    
+    .site-footer .container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+    .container {
+        width: 98%;
+        padding: 0 5px;
+    }
+    
+    .hero h1 {
+        font-size: 24px;
+    }
+    
+    .hero h2 {
+        font-size: 18px;
+    }
+    
+    .hero p {
+        font-size: 14px;
+    }
+    
+    .about-text h2 {
+        font-size: 20px;
+    }
+    
+    .card h3 {
+        font-size: 16px;
+    }
+    
+    .card p {
+        font-size: 13px;
+    }
+    
+    .gallery {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .video-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+}
 
 .btn {
     display: inline-block;
@@ -115,7 +357,7 @@ body {
 }
 .card h3 { margin-top: 0; }
 .card ul { margin: 0; padding-left: 18px; color: var(--muted); }
-.
+
 .teacher-photo img { width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--gold); }
 
 .gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
