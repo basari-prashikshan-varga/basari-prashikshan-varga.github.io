@@ -43,14 +43,14 @@
                 <h1>Media</h1>
                 <h2>Photos</h2>
                 <div class="gallery">
-                    <img src="images/image1.png" alt="Performance photo 1" loading="lazy" decoding="async" width="600" height="400">
-                    <img src="images/image3.jpg" alt="Performance photo 3" loading="lazy" decoding="async" width="600" height="400">
-                    <img src="images/image4.JPG" alt="Performance photo 4" loading="lazy" decoding="async" width="600" height="400">
-                    <img src="images/image5.JPG" alt="Performance photo 5" loading="lazy" decoding="async" width="600" height="400">
-                    <img src="images/image6.JPG" alt="Performance photo 6" loading="lazy" decoding="async" width="600" height="400">
-                    <img src="images/image7.JPG" alt="Performance photo 7" loading="lazy" decoding="async" width="600" height="400">
-                    <img src="images/image2.jpeg" alt="Performance photo 2" loading="lazy" decoding="async" width="600" height="400">
-                    <img src="images/image8.jpg" alt="Performance photo 8" loading="lazy" decoding="async" width="600" height="400">
+                    <img src="images/image1.png" alt="Performance photo 1" loading="lazy" decoding="async" width="600" height="400" class="clickable-image">
+                    <img src="images/image3.jpg" alt="Performance photo 3" loading="lazy" decoding="async" width="600" height="400" class="clickable-image">
+                    <img src="images/image4.JPG" alt="Performance photo 4" loading="lazy" decoding="async" width="600" height="400" class="clickable-image">
+                    <img src="images/image5.JPG" alt="Performance photo 5" loading="lazy" decoding="async" width="600" height="400" class="clickable-image">
+                    <img src="images/image6.JPG" alt="Performance photo 6" loading="lazy" decoding="async" width="600" height="400" class="clickable-image">
+                    <img src="images/image7.JPG" alt="Performance photo 7" loading="lazy" decoding="async" width="600" height="400" class="clickable-image">
+                    <img src="images/image2.jpeg" alt="Performance photo 2" loading="lazy" decoding="async" width="600" height="400" class="clickable-image">
+                    <img src="images/image8.jpg" alt="Performance photo 8" loading="lazy" decoding="async" width="600" height="400" class="clickable-image">
                 </div>
                 <br>
                 <br>
@@ -124,6 +124,14 @@
             </div>
         </div>
     </footer>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="image-modal">
+        <div class="image-modal-content">
+            <button class="image-modal-close" aria-label="Close image">&times;</button>
+            <img id="modalImage" src="" alt="">
+        </div>
+    </div>
 
     <script src="script.js"></script>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>

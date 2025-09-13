@@ -138,6 +138,46 @@ document.addEventListener('DOMContentLoaded', () => {
             ageInput.value = digits;
         });
     }
+
+    // Image modal functionality
+    const imageModal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalClose = document.querySelector('.image-modal-close');
+    const clickableImages = document.querySelectorAll('.clickable-image');
+
+    if (imageModal && modalImage && modalClose) {
+        // Open modal when clicking on images
+        clickableImages.forEach(img => {
+            img.addEventListener('click', () => {
+                modalImage.src = img.src;
+                modalImage.alt = img.alt;
+                imageModal.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            });
+        });
+
+        // Close modal when clicking close button
+        modalClose.addEventListener('click', () => {
+            imageModal.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        });
+
+        // Close modal when clicking outside the image
+        imageModal.addEventListener('click', (e) => {
+            if (e.target === imageModal) {
+                imageModal.classList.remove('active');
+                document.body.style.overflow = 'auto'; // Restore scrolling
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && imageModal.classList.contains('active')) {
+                imageModal.classList.remove('active');
+                document.body.style.overflow = 'auto'; // Restore scrolling
+            }
+        });
+    }
 });
 
 
