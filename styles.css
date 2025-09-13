@@ -846,8 +846,82 @@ body {
     flex-shrink: 0;
 }
 
-/* Enhanced mobile interactions */
+/* Mobile Performance Optimizations */
 @media (max-width: 768px) {
+    /* Reduce animations for better performance */
+    * {
+        animation-duration: 0.3s !important;
+        transition-duration: 0.2s !important;
+    }
+    
+    /* Disable expensive CSS properties on mobile */
+    .site-header {
+        will-change: auto;
+    }
+    
+    .card {
+        will-change: auto;
+    }
+    
+    .btn {
+        will-change: auto;
+    }
+    
+    /* Optimize image rendering */
+    img {
+        image-rendering: optimizeSpeed;
+    }
+    
+    /* Reduce repaints */
+    .clickable-image:hover {
+        transform: none;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Disable complex animations on mobile */
+    .card:hover {
+        transform: none;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+    
+    .card::before {
+        display: none;
+    }
+    
+    .btn::before {
+        display: none;
+    }
+    
+    .btn:hover {
+        transform: none;
+        box-shadow: 0 4px 15px rgba(201, 154, 43, 0.3);
+    }
+    
+    /* Simplify loading screen */
+    .loading-logo {
+        animation: none;
+    }
+    
+    .loading-spinner {
+        animation: spin 2s linear infinite;
+    }
+    
+    /* Reduce blur effects */
+    .site-header {
+        backdrop-filter: none;
+    }
+    
+    .image-modal {
+        backdrop-filter: none;
+    }
+    
+    /* Optimize scroll animations */
+    .animate-on-scroll {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+    
     .scroll-to-top {
         bottom: 20px;
         right: 20px;
@@ -856,12 +930,9 @@ body {
         font-size: 18px;
     }
     
-    .music-note {
-        font-size: 18px;
-    }
-    
     .page-border::before {
         border-width: 1px;
+        animation: none;
     }
     
     /* Touch feedback for mobile */
@@ -896,6 +967,20 @@ body {
     .nav a:active {
         background-color: rgba(122, 0, 25, 0.1);
         border-radius: 8px;
+    }
+    
+    /* Reduce hero animations */
+    .hero h1, .hero h2, .hero p {
+        animation: none;
+    }
+    
+    /* Simplify image modal */
+    .image-modal {
+        animation: none;
+    }
+    
+    .image-modal-content {
+        animation: none;
     }
 }
 
