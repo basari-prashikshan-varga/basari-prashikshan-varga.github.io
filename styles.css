@@ -788,20 +788,6 @@ body {
     100% { background-position: -200% 0; }
 }
 
-/* Music-themed decorative elements */
-.music-note {
-    position: absolute;
-    color: var(--gold);
-    opacity: 0.1;
-    font-size: 24px;
-    animation: float 6s ease-in-out infinite;
-    pointer-events: none;
-}
-
-.music-note:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
-.music-note:nth-child(2) { top: 40%; right: 15%; animation-delay: 2s; }
-.music-note:nth-child(3) { bottom: 30%; left: 20%; animation-delay: 4s; }
-.music-note:nth-child(4) { bottom: 60%; right: 10%; animation-delay: 1s; }
 
 @keyframes float {
     0%, 100% { transform: translateY(0px) rotate(0deg); }
